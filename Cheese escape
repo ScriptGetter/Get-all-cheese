@@ -1,0 +1,78 @@
+local ScriptHub = Instance.new("ScreenGui")
+local MainFrame = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local TopBar = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local _1 = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+
+
+
+ScriptHub.Name = "ScriptHub"
+ScriptHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScriptHub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainFrame.Name = "MainFrame"
+MainFrame.Parent = ScriptHub
+MainFrame.Active = true
+MainFrame.BackgroundColor3 = Color3.fromRGB(72, 72, 72)
+MainFrame.Position = UDim2.new(0.3509188, 0, 0.352668226, 0)
+MainFrame.Size = UDim2.new(0, 503, 0, 254)
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = MainFrame
+
+TopBar.Name = "TopBar"
+TopBar.Parent = MainFrame
+TopBar.Active = true
+TopBar.BackgroundColor3 = Color3.fromRGB(82, 82, 82)
+TopBar.Size = UDim2.new(0, 503, 0, 27)
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = TopBar
+
+Title.Name = "Title"
+Title.Parent = TopBar
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Size = UDim2.new(0, 503, 0, 27)
+Title.Font = Enum.Font.Unknown
+Title.Text = "ULTIMATE HUB | CHEESE ESCAPE"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+_1.Name = "1"
+_1.Parent = MainFrame
+_1.BackgroundColor3 = Color3.fromRGB(82, 82, 82)
+_1.Position = UDim2.new(0.0318091437, 0, 0.200787395, 0)
+_1.Size = UDim2.new(0, 475, 0, 164)
+_1.Font = Enum.Font.Unknown
+_1.Text = "Get all cheese"
+_1.TextColor3 = Color3.fromRGB(255, 255, 255)
+_1.TextSize = 21.000
+_1.TextWrapped = true
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = _1
+
+
+
+local function PEWMO_fake_script() -- MainFrame.Drag 
+	local script = Instance.new('Script', MainFrame)
+
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end
+coroutine.wrap(PEWMO_fake_script)()
+local function EUQOTX_fake_script() -- _1.Teleport 
+	local script = Instance.new('LocalScript', _1)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		game:GetService("ReplicatedStorage").AddCheese:FireServer()
+	end)
+end
+coroutine.wrap(EUQOTX_fake_script)()
